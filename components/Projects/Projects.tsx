@@ -53,8 +53,7 @@ export default function Projects() {
 
         <div className={styles.grid}>
           {projects.slice(0, 3).map((project) => {
-            const content =
-              t.projects.items[project.id];
+            const content = t.projects.items[project.id];
 
             return (
               <article

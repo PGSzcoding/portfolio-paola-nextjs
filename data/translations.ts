@@ -72,24 +72,42 @@ export const translations = {
   },
 
   items: {
-    'proofs-trials': {
-      title: 'Proofs & Trials',
-      description:
-        'Certification platform with a public verification portal and administrative dashboard.',
-    },
-
-    'layout-aleman': {
-      title: 'Layout Alemán',
-      description:
-        'Bilingual website with an integrated CMS for managing content, projects, and client inquiries.',
-    },
-
-    'hospitality-platform': {
-      title: 'Hospitality Platform',
-      description:
-        'Booking and operations platform supporting more than 130 properties.',
-    },
+  'proofs-trials': {
+    title: 'Proofs & Trials',
+    description:
+      'Plataforma de certificación con portal público de verificación y dashboard administrativo.',
   },
+
+  'layout-aleman': {
+    title: 'Layout Alemán',
+    description:
+      'Sitio web bilingüe con CMS integrado para gestionar contenido y proyectos.',
+  },
+
+  'hospitality-platform': {
+    title: 'Hospitality Platform',
+    description:
+      'Plataforma de reservas y operaciones para más de 130 propiedades.',
+  },
+
+  'bookshelf': {
+    title: 'BookShelf',
+    description:
+      'Aplicación para organizar y descubrir libros y gestionar tu biblioteca personal.',
+  },
+
+  'tekoestudio': {
+    title: 'Tekoestudio',
+    description:
+      'Sitio web y experiencias digitales desarrolladas para una agencia creativa.',
+  },
+
+  'chat-app': {
+    title: 'Chat App',
+    description:
+      'Aplicación de mensajería en tiempo real con comunicación entre usuarios.',
+  },
+},
 },
 aiTwin: {
   label: 'PAOLA\'S AI TWIN',
@@ -122,6 +140,28 @@ footer: {
     'Hecho con Next.js y TypeScript',
 
   backToTop: 'Volver arriba',
+},
+projectsPage: {
+  label: 'PROYECTOS',
+
+  title: 'Todos mis proyectos',
+
+  filters: {
+    all: 'Todos',
+  },
+
+  categories: {
+    fullstack: 'FULL-STACK',
+    freelance: 'FREELANCE',
+  },
+
+  showing: 'Mostrando',
+
+  projects: 'proyectos',
+
+  previous: 'Anterior',
+
+  next: 'Siguiente',
 },
 
   },
@@ -198,24 +238,42 @@ projects: {
   },
 
   items: {
-    'proofs-trials': {
-      title: 'Proofs & Trials',
-      description:
-        'Certification platform with a public verification portal and administrative dashboard.',
-    },
-
-    'layout-aleman': {
-      title: 'Layout Alemán',
-      description:
-        'Bilingual website with an integrated CMS for managing content, projects, and client inquiries.',
-    },
-
-    'hospitality-platform': {
-      title: 'Hospitality Platform',
-      description:
-        'Booking and operations platform supporting more than 130 properties.',
-    },
+  'proofs-trials': {
+    title: 'Proofs & Trials',
+    description:
+      'Certification platform with a public verification portal and administrative dashboard.',
   },
+
+  'layout-aleman': {
+    title: 'Layout Alemán',
+    description:
+      'Bilingual website with an integrated CMS for managing content and projects.',
+  },
+
+  'hospitality-platform': {
+    title: 'Hospitality Platform',
+    description:
+      'Booking and operations platform supporting more than 130 properties.',
+  },
+
+  'bookshelf': {
+    title: 'BookShelf',
+    description:
+      'Application for organizing, discovering, and managing your personal book library.',
+  },
+
+  'tekoestudio': {
+    title: 'Tekoestudio',
+    description:
+      'Website and digital experiences developed for a creative agency.',
+  },
+
+  'chat-app': {
+    title: 'Chat App',
+    description:
+      'Real-time messaging application for communication between users.',
+  },
+},
 },
 aiTwin: {
   label: 'PAOLA\'S AI TWIN',
@@ -248,6 +306,28 @@ footer: {
     'Built with Next.js & TypeScript',
 
   backToTop: 'Back to top',
+},
+projectsPage: {
+  label: 'PROJECTS',
+
+  title: 'All my projects',
+
+  filters: {
+    all: 'All',
+  },
+
+  categories: {
+    fullstack: 'FULL-STACK',
+    freelance: 'FREELANCE',
+  },
+
+  showing: 'Showing',
+
+  projects: 'projects',
+
+  previous: 'Previous',
+
+  next: 'Next',
 },
   },
 
@@ -323,24 +403,36 @@ projects: {
   },
 
   items: {
-    'proofs-trials': {
-      title: 'Proofs & Trials',
-      description:
-        'Certification platform with a public verification portal and administrative dashboard.',
-    },
-
-    'layout-aleman': {
-      title: 'Layout Alemán',
-      description:
-        'Bilingual website with an integrated CMS for managing content, projects, and client inquiries.',
-    },
-
-    'hospitality-platform': {
-      title: 'Hospitality Platform',
-      description:
-        'Booking and operations platform supporting more than 130 properties.',
-    },
+  'proofs-trials': {
+    title: 'Proofs & Trials',
+    description: '...',
   },
+
+  'layout-aleman': {
+    title: 'Layout Alemán',
+    description: '...',
+  },
+
+  'hospitality-platform': {
+    title: 'Hospitality Platform',
+    description: '...',
+  },
+
+  'bookshelf': {
+    title: 'BookShelf',
+    description: '...',
+  },
+
+  'tekoestudio': {
+    title: 'Tekoestudio',
+    description: '...',
+  },
+
+  'chat-app': {
+    title: 'Chat App',
+    description: '...',
+  },
+},
 },
 aiTwin: {
   label: 'PAOLA\'S AI TWIN',
@@ -373,6 +465,28 @@ footer: {
     'Créé avec Next.js et TypeScript',
 
   backToTop: 'Retour en haut',
+},
+projectsPage: {
+  label: 'PROJECTS',
+
+  title: 'All my projects',
+
+  filters: {
+    all: 'All',
+  },
+
+  categories: {
+    fullstack: 'FULL-STACK',
+    freelance: 'FREELANCE',
+  },
+
+  showing: 'Showing',
+
+  projects: 'projects',
+
+  previous: 'Previous',
+
+  next: 'Next',
 },
   },
 } as const;

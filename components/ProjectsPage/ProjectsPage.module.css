@@ -1,0 +1,119 @@
+.page {
+  min-height: 100vh;
+
+  padding: 50px 24px 100px;
+
+  background: var(--background);
+
+  color: var(--text);
+}
+
+.hero {
+  width: min(
+    100%,
+    var(--container-width)
+  );
+
+  margin: 0 auto;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.label {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 25px;
+
+  color: var(--primary);
+
+  font-family: var(--font-display);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.line {
+  width: 60px;
+  height: 1px;
+
+  background: var(--primary);
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.title {
+  margin: 0 0 55px;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(
+    48px,
+    7vw,
+    78px
+  );
+
+  line-height: 0.95;
+
+  letter-spacing: -4px;
+}
+
+.title span {
+  color: var(--primary);
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projectsSection {
+  width: min(
+    100%,
+    var(--container-width)
+  );
+
+  margin: 0 auto;
+}
+
+
+/* =========================
+   RESULTS
+========================= */
+
+.results {
+  margin-top: 35px;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .page {
+    padding: 110px 20px 70px;
+  }
+
+  .title {
+    margin-bottom: 40px;
+
+    font-size: 50px;
+
+    letter-spacing: -2px;
+  }
+}
