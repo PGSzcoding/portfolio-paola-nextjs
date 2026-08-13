@@ -1,0 +1,183 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--background);
+
+  color: var(--text);
+}
+
+.content {
+  width: min(
+    calc(100% - 48px),
+    520px
+  );
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  margin-bottom: 40px;
+
+  font-family: var(--font-display);
+
+  font-size: 56px;
+  font-weight: 700;
+
+  letter-spacing: -4px;
+
+  text-align: center;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.title {
+  display: flex;
+  flex-direction: column;
+align-items: center;
+  margin-bottom: 45px;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(
+    42px,
+    8vw,
+    60px
+  );
+
+  font-weight: 700;
+
+  line-height: 0.9;
+
+  letter-spacing: -4px;
+}
+
+.title span:last-child {
+  color: var(--primary);
+}
+
+
+/* =========================
+   STEPS
+========================= */
+
+.steps {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  margin-bottom: 40px;
+
+  font-family: monospace;
+
+  font-size: 14px;
+}
+
+.step {
+  display: grid;
+
+  grid-template-columns:
+    20px 1fr 30px;
+
+  align-items: center;
+
+  color: var(--text-secondary);
+}
+
+.prompt {
+  color: var(--primary);
+}
+
+.complete {
+  color: var(--primary);
+  text-align: right;
+}
+
+.pending {
+  color: var(--text-secondary);
+  opacity: 0.5;
+  text-align: right;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progressWrapper {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+}
+
+.progress {
+  flex: 1;
+
+  height: 4px;
+
+  overflow: hidden;
+
+  background: var(--primary-light);
+
+  border-radius: var(--radius-pill);
+}
+
+.progressBar {
+  height: 100%;
+
+  background: var(--primary);
+
+  border-radius: inherit;
+
+  transition: width 0.03s linear;
+}
+
+.percentage {
+  min-width: 42px;
+
+  font-family: monospace;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-align: right;
+}
+
+.exit {
+  animation:
+    slideUp 0.7s
+    cubic-bezier(
+      0.76,
+      0,
+      0.24,
+      1
+    )
+    forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}

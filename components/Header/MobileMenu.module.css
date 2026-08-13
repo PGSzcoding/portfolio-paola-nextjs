@@ -1,0 +1,58 @@
+/* MOBILE MENU */
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  
+  .menu-button {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: flex;
+
+    position: absolute;
+    top: 82px;
+    left: 24px;
+    right: 24px;
+
+    padding: 28px;
+
+    background: var(--background-soft);
+
+    border: 1px solid rgba(23, 23, 23, 0.1);
+    border-radius: var(--radius-lg);
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .mobile-menu nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mobile-menu nav a {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+    justify-content: center;
+
+    padding: 14px;
+
+    border-radius: var(--radius-pill);
+
+    background: var(--black);
+    color: white;
+
+    font-weight: 600;
+  }
+}

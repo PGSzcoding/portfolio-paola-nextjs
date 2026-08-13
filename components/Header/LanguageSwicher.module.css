@@ -1,0 +1,55 @@
+.languageSwitcher {
+  display: flex;
+  align-items: center;
+
+  gap: 3px;
+
+  padding: 4px;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  border: 1px solid rgba(23, 23, 23, 0.1);
+
+  border-radius: var(--radius-pill);
+
+  backdrop-filter: blur(8px);
+}
+
+.languageButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 34px;
+  height: 30px;
+
+  padding: 0 8px;
+
+  border: none;
+  border-radius: var(--radius-pill);
+
+  background: transparent;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.languageButton:hover {
+  color: var(--primary);
+}
+
+.languageButton.active {
+  background: var(--white);
+  color: var(--primary);
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.08);
+}
