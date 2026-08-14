@@ -6,15 +6,16 @@ export type ProjectId =
   | 'tekoestudio'
   | 'chat-app';
 
+export type ProjectCategory = 'fullstack' | 'freelance';
+
 export interface Project {
   id: ProjectId;
   image: string;
-  category: 'fullstack' | 'freelance';
-  technologies: string[];
-  href?: string;
+  category: ProjectCategory;
+  technologies: readonly string[];
 }
 
-export const projects: Project[] = [
+export const projects = [
   {
     id: 'proofs-trials',
     image: '/images/default-proyect.png',
@@ -86,4 +87,8 @@ export const projects: Project[] = [
       'Socket.io',
     ],
   },
-];
+] as const satisfies readonly Project[];
+
+export const projectTechnologies = [
+  ...new Set(projects.flatMap((project) => project.technologies)),
+].sort();

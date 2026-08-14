@@ -1,21 +1,25 @@
 interface NavItem {
-  label: string;
+  label: 'home' | 'about' | 'projects' | 'stack' | 'contact';
   href: string;
 }
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
-  items: NavItem[];
+  items: readonly NavItem[];
 }
 
 import styles from './MobileMenu.module.css';
+import { useLanguage } from '@/context/LanguageContext';
+import Link from 'next/link';
 
 export default function MobileMenu({
   isOpen,
   onClose,
   items,
 }: MobileMenuProps) {
+  const { t } = useLanguage();
+
   if (!isOpen) return null;
 
   return (
@@ -23,23 +27,23 @@ export default function MobileMenu({
 
       <nav>
         {items.map((item) => (
-          <a
+          <Link
             key={item.href}
             href={item.href}
             onClick={onClose}
           >
-            {item.label}
-          </a>
+            {t.nav[item.label]}
+          </Link>
         ))}
       </nav>
 
-      <a
-        href="#contact"
+      <Link
+        href="/#contact"
         className={styles["mobile-menu-button"]}
         onClick={onClose}
       >
-        Hablemos ↗
-      </a>
+        {t.nav.letsTalk} ↗
+      </Link>
 
     </div>
   );

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { useLanguage } from '@/context/LanguageContext';
 import { projects } from '@/data/projects';
@@ -64,9 +65,11 @@ export default function Projects() {
                 {/* Image */}
 
                 <div className={styles.imageWrapper}>
-                  <img
+                  <Image
                     src={project.image}
                     alt={content.title}
+                    fill
+                    sizes="(max-width: 650px) 100vw, (max-width: 900px) 50vw, 33vw"
                     className={styles.image}
                   />
 
@@ -108,15 +111,13 @@ export default function Projects() {
 
                   {/* Arrow */}
 
-                  {project.href && (
-                    <Link
-                      href={project.href}
-                      className={styles.arrow}
-                      aria-label={`View ${content.title}`}
-                    >
-                      ↗
-                    </Link>
-                  )}
+                  <Link
+                    href={`/projects#${project.id}`}
+                    className={styles.arrow}
+                    aria-label={`${t.projectsPage.viewProject}: ${content.title}`}
+                  >
+                    ↗
+                  </Link>
 
                 </div>
 

@@ -9,6 +9,8 @@ export const translations = {
       stack: 'Tech Stack',
       contact: 'Contacto',
       letsTalk: 'Hablemos',
+      openMenu: 'Abrir menú',
+      closeMenu: 'Cerrar menú',
     },
 
     hero: {
@@ -60,11 +62,11 @@ export const translations = {
       quote: 'No se trata solo de escribir código, sino de crear soluciones que realmente hacen la diferencia.',
     },
     projects: {
-  label: '03. PROJECTS',
+  label: '03. PROYECTOS',
 
-  title: 'Projects.',
+  title: 'Proyectos.',
 
-  viewAll: 'View all projects',
+  viewAll: 'Ver todos los proyectos',
 
   categories: {
     fullstack: 'FULL-STACK',
@@ -111,6 +113,8 @@ export const translations = {
 },
 aiTwin: {
   label: 'PAOLA\'S AI TWIN',
+  name: 'PAOLA\'S AI TWIN',
+  imageAlt: 'Retrato ilustrado del AI Twin de Paola',
 
   title: 'Habla con mi AI Twin.',
 
@@ -146,8 +150,9 @@ projectsPage: {
 
   title: 'Todos mis proyectos',
 
-  filters: {
+    filters: {
     all: 'Todos',
+    label: 'Filtrar proyectos por tecnología',
   },
 
   categories: {
@@ -162,6 +167,8 @@ projectsPage: {
   previous: 'Anterior',
 
   next: 'Siguiente',
+  empty: 'No se encontraron proyectos.',
+  viewProject: 'Ver proyecto',
 },
 
   },
@@ -174,6 +181,8 @@ projectsPage: {
       stack: 'Tech Stack',
       contact: 'Contact',
       letsTalk: "Let's talk",
+      openMenu: 'Open menu',
+      closeMenu: 'Close menu',
     },
 
     hero: {
@@ -277,6 +286,8 @@ projects: {
 },
 aiTwin: {
   label: 'PAOLA\'S AI TWIN',
+  name: 'PAOLA\'S AI TWIN',
+  imageAlt: "Illustrated portrait of Paola's AI Twin",
 
   title: 'Talk to my AI Twin.',
 
@@ -314,6 +325,7 @@ projectsPage: {
 
   filters: {
     all: 'All',
+    label: 'Filter projects by technology',
   },
 
   categories: {
@@ -328,6 +340,8 @@ projectsPage: {
   previous: 'Previous',
 
   next: 'Next',
+  empty: 'No projects found.',
+  viewProject: 'View project',
 },
   },
 
@@ -339,6 +353,8 @@ projectsPage: {
       stack: 'Technologies',
       contact: 'Contact',
       letsTalk: 'Parlons',
+      openMenu: 'Ouvrir le menu',
+      closeMenu: 'Fermer le menu',
     },
 
     hero: {
@@ -351,51 +367,51 @@ projectsPage: {
       techLabel: 'TECHNOLOGIES QUE J’UTILISE',
     },
     about: {
-  label: '02. ABOUT ME',
+  label: '02. À PROPOS',
 
   title: {
-    first: 'I design with intention.',
-    second: 'I code with purpose.',
+    first: 'Je conçois avec intention.',
+    second: 'Je code avec sens.',
   },
 
   description: [
-    'I’m a Full-Stack Software Engineer with 5+ years of experience building web applications and digital experiences that combine functionality, performance, and design.',
+    'Je suis ingénieure logiciel full-stack avec plus de 5 ans d’expérience dans la création d’applications web et d’expériences numériques qui allient fonctionnalité, performance et design.',
 
-    'I specialize in frontend development, with experience in React, Next.js, TypeScript, Svelte, and Angular. I also work with Node.js, APIs, databases, and AWS to build complete and scalable solutions.',
+    'Je suis spécialisée en développement frontend, avec de l’expérience en React, Next.js, TypeScript, Svelte et Angular. Je travaille aussi avec Node.js, les API, les bases de données et AWS pour créer des solutions complètes et évolutives.',
 
-    'I enjoy turning ideas into real products, collaborating with teams, and continuously learning along the way.',
+    'J’aime transformer les idées en produits concrets, collaborer en équipe et apprendre continuellement.',
   ],
 
   stats: {
     experience: {
       value: '5+',
-      label: 'YEARS OF EXPERIENCE',
+      label: 'ANNÉES D’EXPÉRIENCE',
     },
 
     projects: {
       value: '20+',
-      label: 'PROJECTS DELIVERED',
+      label: 'PROJETS LIVRÉS',
     },
 
     remote: {
       value: 'REMOTE',
-      label: 'AVAILABLE WORLDWIDE',
+      label: 'DISPONIBLE PARTOUT',
     },
 
     learning: {
       value: 'LEARNING',
-      label: 'ALWAYS EVOLVING',
+      label: 'TOUJOURS EN ÉVOLUTION',
     },
   },
 
-  quote: 'It’s not just about writing code, but about creating solutions that truly make a difference.',
+  quote: 'Il ne s’agit pas seulement d’écrire du code, mais de créer des solutions qui font vraiment la différence.',
 },
 projects: {
-  label: '03. PROJECTS',
+  label: '03. PROJETS',
 
-  title: 'Projects.',
+  title: 'Projets.',
 
-  viewAll: 'View all projects',
+  viewAll: 'Voir tous les projets',
 
   categories: {
     fullstack: 'FULL-STACK',
@@ -405,55 +421,57 @@ projects: {
   items: {
   'proofs-trials': {
     title: 'Proofs & Trials',
-    description: '...',
+    description: 'Plateforme de certification avec un portail public de vérification et un tableau de bord administratif.',
   },
 
   'layout-aleman': {
     title: 'Layout Alemán',
-    description: '...',
+    description: 'Site web bilingue avec un CMS intégré pour gérer le contenu et les projets.',
   },
 
   'hospitality-platform': {
     title: 'Hospitality Platform',
-    description: '...',
+    description: 'Plateforme de réservation et d’opérations pour plus de 130 établissements.',
   },
 
   'bookshelf': {
     title: 'BookShelf',
-    description: '...',
+    description: 'Application pour organiser, découvrir et gérer votre bibliothèque personnelle.',
   },
 
   'tekoestudio': {
     title: 'Tekoestudio',
-    description: '...',
+    description: 'Site web et expériences numériques développés pour une agence créative.',
   },
 
   'chat-app': {
     title: 'Chat App',
-    description: '...',
+    description: 'Application de messagerie en temps réel pour communiquer entre utilisateurs.',
   },
 },
 },
 aiTwin: {
   label: 'PAOLA\'S AI TWIN',
+  name: 'PAOLA\'S AI TWIN',
+  imageAlt: "Portrait illustré de l'AI Twin de Paola",
 
-  title: 'Habla con mi AI Twin.',
+  title: 'Parlez avec mon AI Twin.',
 
   description:
-    'Una versión digital de mí para responder tus preguntas sobre mi experiencia, proyectos y tecnología.',
+    'Une version numérique de moi, prête à répondre à vos questions sur mon expérience, mes projets et la technologie.',
 
   online: 'ONLINE',
 
   greeting:
-    '¡Hola! Soy el AI Twin de Paola. ¿Qué quieres saber sobre ella?',
+    'Bonjour ! Je suis l’AI Twin de Paola. Que souhaitez-vous savoir sur elle ?',
 
   exampleQuestion:
-    '¿Qué tecnologías utiliza Paola?',
+    'Quelles technologies Paola utilise-t-elle ?',
 
   placeholder:
-    'Pregúntame algo sobre Paola...',
+    'Posez-moi une question sur Paola...',
 
-  send: 'Enviar pregunta',
+  send: 'Envoyer la question',
 },
 footer: {
   message:
@@ -467,12 +485,13 @@ footer: {
   backToTop: 'Retour en haut',
 },
 projectsPage: {
-  label: 'PROJECTS',
+  label: 'PROJETS',
 
-  title: 'All my projects',
+  title: 'Tous mes projets',
 
   filters: {
-    all: 'All',
+    all: 'Tous',
+    label: 'Filtrer les projets par technologie',
   },
 
   categories: {
@@ -480,13 +499,15 @@ projectsPage: {
     freelance: 'FREELANCE',
   },
 
-  showing: 'Showing',
+  showing: 'Affichage de',
 
-  projects: 'projects',
+  projects: 'projets',
 
-  previous: 'Previous',
+  previous: 'Précédent',
 
-  next: 'Next',
+  next: 'Suivant',
+  empty: 'Aucun projet trouvé.',
+  viewProject: 'Voir le projet',
 },
   },
 } as const;

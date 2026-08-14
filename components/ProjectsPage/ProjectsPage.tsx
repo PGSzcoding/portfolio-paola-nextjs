@@ -23,8 +23,8 @@ export default function ProjectsPage() {
     }
 
     return projects.filter((project) =>
-      project.technologies.includes(
-        selectedTechnology
+      project.technologies.some(
+        (technology) => technology === selectedTechnology
       )
     );
   }, [selectedTechnology]);

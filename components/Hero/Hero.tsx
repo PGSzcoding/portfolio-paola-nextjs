@@ -8,7 +8,8 @@ import styles from './Hero.module.css';
 import TechStack from './TechStack';
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
+  const cvPath = language === 'es' ? '/cv/Resume(es).pdf' : '/cv/Resume(en).pdf';
 
   return (
     <section
@@ -57,8 +58,9 @@ export default function Hero() {
               </Button>
 
               <Button
-                href="/cv.pdf"
+                href={cvPath}
                 variant="outline"
+                download="Paola-Gutierrez-CV.pdf"
               >
                 {t.hero.cvButton}
                 <span>↓</span>

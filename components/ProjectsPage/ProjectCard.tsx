@@ -1,7 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { FiArrowUpRight } from 'react-icons/fi';
+import { motion, useReducedMotion } from 'motion/react';
 
 import { Project } from '@/data/projects';
 
@@ -17,17 +19,27 @@ export default function ProjectCard({
   project,
 }: ProjectCardProps) {
   const { t } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
 
   const content = t.projects.items[project.id];
 
   return (
-    <article className={styles.card}>
+    <motion.article
+      id={project.id}
+      className={styles.card}
+      initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.35, ease: 'easeOut' }}
+    >
 
       <div className={styles.imageWrapper}>
 
-        <img
+        <Image
           src={project.image}
           alt={content.title}
+          fill
+          sizes="(max-width: 620px) 100vw, (max-width: 950px) 50vw, 33vw"
           className={styles.image}
         />
 
@@ -62,18 +74,15 @@ export default function ProjectCard({
 
 
         <Link
-          href={
-            project.href ??
-            `/projects/${project.id}`
-          }
+          href={`/projects#${project.id}`}
           className={styles.arrow}
-          aria-label={`View ${content.title}`}
+          aria-label={`${t.projectsPage.viewProject}: ${content.title}`}
         >
           <FiArrowUpRight />
         </Link>
 
       </div>
 
-    </article>
+    </motion.article>
   );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import LanguageSwitcher from './LanguageSwitcher';
 import MobileMenu from './MobileMenu';
@@ -10,12 +11,12 @@ import { useLanguage } from '@/context/LanguageContext';
 import styles from './Header.module.css';
 
 const navItems = [
-  { label: 'home', href: '#inicio' },
-  { label: 'about', href: '#about' },
-  { label: 'projects', href: '#projects' },
-  { label: 'stack', href: '#stack' },
-  { label: 'contact', href: '#contact' },
-];
+  { label: 'home', href: '/#inicio' },
+  { label: 'about', href: '/#about' },
+  { label: 'projects', href: '/#projects' },
+  { label: 'stack', href: '/#stack' },
+  { label: 'contact', href: '/#contact' },
+] as const;
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,16 +29,16 @@ export default function Header() {
         <div className={styles.headerInner}>
 
           {/* Logo */}
-          <a href="#inicio" className={styles.logo}>
+          <Link href="/#inicio" className={styles.logo}>
             PG<span>.</span>
-          </a>
+          </Link>
 
           {/* Desktop navigation */}
           <nav className={styles.desktopNav}>
             {navItems.map((item) => (
-              <a key={item.href} href={item.href}>
-                {t.nav[item.label as keyof typeof t.nav]}
-              </a>
+              <Link key={item.href} href={item.href}>
+                {t.nav[item.label]}
+              </Link>
             ))}
           </nav>
 
@@ -47,7 +48,7 @@ export default function Header() {
             <LanguageSwitcher />
 
             <Button
-              href="#contact"
+              href="/#contact"
               variant="dark"
             >
               {t.nav.letsTalk}
@@ -60,7 +61,7 @@ export default function Header() {
           <button
             className={styles.menuButton}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Open menu"
+            aria-label={isMenuOpen ? t.nav.closeMenu : t.nav.openMenu}
             aria-expanded={isMenuOpen}
           >
             <span />

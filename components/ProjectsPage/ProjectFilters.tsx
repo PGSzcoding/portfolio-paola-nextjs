@@ -1,8 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
-
-import { projects } from '@/data/projects';
+import { projectTechnologies } from '@/data/projects';
 
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -21,23 +19,13 @@ export default function ProjectFilters({
 }: ProjectFiltersProps) {
   const { t } = useLanguage();
 
-  const technologies = useMemo(() => {
-    const allTechnologies = projects.flatMap(
-      (project) => project.technologies
-    );
-
-    return [
-      ...new Set(allTechnologies),
-    ].sort();
-  }, []);
-
   return (
     <div className={styles.wrapper}>
 
       <div
         className={styles.filters}
         role="group"
-        aria-label="Project filters"
+        aria-label={t.projectsPage.filters.label}
       >
 
         <button
@@ -50,12 +38,13 @@ export default function ProjectFilters({
           onClick={() =>
             onTechnologyChange('all')
           }
+          aria-pressed={selectedTechnology === 'all'}
         >
           {t.projectsPage.filters.all}
         </button>
 
 
-        {technologies.map((technology) => (
+        {projectTechnologies.map((technology) => (
           <button
             key={technology}
             type="button"
@@ -69,6 +58,7 @@ export default function ProjectFilters({
                 technology
               )
             }
+            aria-pressed={selectedTechnology === technology}
           >
             {technology}
           </button>

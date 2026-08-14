@@ -1,6 +1,7 @@
 'use client';
 
 import { useLanguage } from '@/context/LanguageContext';
+import Image from 'next/image';
 
 import styles from './AiTwin.module.css';
 
@@ -45,9 +46,12 @@ export default function AiTwin() {
           {/* Character */}
 
           <div className={styles.character}>
-            <img
+            <Image
               src="/images/AI/paola-ai-twin.png"
-              alt="Paola's AI Twin"
+              alt={t.aiTwin.imageAlt}
+              width={400}
+              height={510}
+              sizes="(max-width: 850px) 260px, 400px"
             />
           </div>
 
@@ -67,7 +71,7 @@ export default function AiTwin() {
 
                 <div>
                   <strong>
-                    Paola's AI Twin
+                    {t.aiTwin.name}
                   </strong>
 
                   <span>
@@ -91,7 +95,7 @@ export default function AiTwin() {
                 className={`${styles.message} ${styles.aiMessage}`}
               >
                 <span className={styles.messageLabel}>
-                  PAOLA'S AI TWIN
+                  {t.aiTwin.name}
                 </span>
 
                 <p>
@@ -113,7 +117,7 @@ export default function AiTwin() {
                 className={`${styles.message} ${styles.aiMessage}`}
               >
                 <span className={styles.messageLabel}>
-                  PAOLA'S AI TWIN
+                  {t.aiTwin.name}
                 </span>
 
                 <p className={styles.typing}>
@@ -136,6 +140,7 @@ export default function AiTwin() {
               <button
                 type="button"
                 aria-label={t.aiTwin.send}
+                disabled
               >
                 ↗
               </button>

@@ -7,6 +7,7 @@ import {
 } from 'react-icons/si';
 
 import styles from './TechStack.module.css';
+import { useLanguage } from '@/context/LanguageContext';
 
 const technologies = [
   {
@@ -32,11 +33,13 @@ const technologies = [
 ];
 
 export default function TechStack() {
+  const { t } = useLanguage();
+
   return (
-    <section className={styles.techStack}>
+    <section id="stack" className={styles.techStack}>
       <div className={styles.inner}>
         <span className={styles.label}>
-          TECH I WORK WITH
+          {t.hero.techLabel}
         </span>
 
         <div className={styles.technologies}>
