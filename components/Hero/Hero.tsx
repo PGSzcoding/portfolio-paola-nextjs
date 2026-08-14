@@ -2,17 +2,26 @@
 import Image from 'next/image';
 
 import Button from '@/components/ui/Button';
+import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react';
+import { useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import Reveal from '@/components/ui/Reveal';
 
 import styles from './Hero.module.css';
 import TechStack from './TechStack';
 
 export default function Hero() {
   const { language, t } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end start'] });
+  const avatarY = useTransform(scrollYProgress, [0, 1], [0, -110]);
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, 70]);
   const cvPath = language === 'es' ? '/cv/Resume(es).pdf' : '/cv/Resume(en).pdf';
 
   return (
     <section
+      ref={sectionRef}
       id="inicio"
       className={styles.hero}
     >
@@ -20,7 +29,8 @@ export default function Hero() {
 
         <div className={styles.grid}>
 
-          <div className={styles.content}>
+          <motion.div className={styles.content} style={shouldReduceMotion ? undefined : { y: contentY }}>
+          <Reveal>
 
             <div className={styles.intro}>
               <span className={styles.star}>
@@ -68,28 +78,36 @@ export default function Hero() {
 
             </div>
 
-          </div>
+          </Reveal>
+          </motion.div>
 
-          <div className={styles.visual}>
+          <motion.div
+            className={styles.visual}
+            initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.65, delay: shouldReduceMotion ? 0 : 0.15, ease: 'easeOut' }}
+          >
 
             <div className={styles.shape} />
 
-            <div className={styles.dots} />
+            <motion.div className={styles.dots} animate={shouldReduceMotion ? undefined : { rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: 'linear' }} />
 
             <div className={styles.code}>
               &lt;/&gt;
             </div>
 
-            <Image
-              src="/images/hero/paola-avatar.png"
-              alt="Paola Gutierrez"
-              width={600}
-              height={700}
-              priority
-              className={styles.avatar}
-            />
+            <motion.div style={shouldReduceMotion ? undefined : { y: avatarY }}>
+              <Image
+                src="/images/hero/paola-avatar.png"
+                alt="Paola Gutierrez"
+                width={600}
+                height={700}
+                priority
+                className={styles.avatar}
+              />
+            </motion.div>
 
-          </div>
+          </motion.div>
 
         </div>
 

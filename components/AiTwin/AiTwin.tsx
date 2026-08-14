@@ -2,22 +2,29 @@
 
 import { useLanguage } from '@/context/LanguageContext';
 import Image from 'next/image';
+import { motion, useReducedMotion } from 'motion/react';
+import Reveal from '@/components/ui/Reveal';
 
 import styles from './AiTwin.module.css';
 
 export default function AiTwin() {
   const { t } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section
+    <motion.section
       id="ai-twin"
       className={styles.aiTwin}
+      initial={shouldReduceMotion ? false : { backgroundColor: '#f8eee6' }}
+      whileInView={{ backgroundColor: '#101014' }}
+      viewport={{ once: true, amount: 0.12 }}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
     >
       <div className={styles.content}>
 
         {/* Header */}
 
-        <div className={styles.heading}>
+        <Reveal className={styles.heading}>
           <span className={styles.label}>
             {t.aiTwin.label}
           </span>
@@ -29,7 +36,7 @@ export default function AiTwin() {
           <p>
             {t.aiTwin.description}
           </p>
-        </div>
+        </Reveal>
 
 
         {/* Chat area */}
@@ -45,7 +52,13 @@ export default function AiTwin() {
 
           {/* Character */}
 
-          <div className={styles.character}>
+          <motion.div
+            className={styles.character}
+            initial={shouldReduceMotion ? false : { opacity: 0, x: -36 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.55, ease: 'easeOut' }}
+          >
             <Image
               src="/images/AI/paola-ai-twin.png"
               alt={t.aiTwin.imageAlt}
@@ -53,12 +66,18 @@ export default function AiTwin() {
               height={510}
               sizes="(max-width: 850px) 260px, 400px"
             />
-          </div>
+          </motion.div>
 
 
           {/* Chat */}
 
-          <div className={styles.chat}>
+          <motion.div
+            className={styles.chat}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.55, delay: shouldReduceMotion ? 0 : 0.12, ease: 'easeOut' }}
+          >
 
             {/* Chat header */}
 
@@ -146,11 +165,11 @@ export default function AiTwin() {
               </button>
             </div>
 
-          </div>
+          </motion.div>
 
         </div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

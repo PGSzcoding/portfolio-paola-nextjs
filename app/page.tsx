@@ -9,6 +9,7 @@ import About from '@/components/About/About';
 import Projects from '@/components/Projects/Projects';
 import AiTwin from '@/components/AiTwin/AiTwin';
 import Footer from '@/components/Footer/Footer';
+import ScrollProgress from '@/components/ui/ScrollProgress';
 
 export default function Home() {
   const [isLoading, setIsLoading] =
@@ -16,6 +17,7 @@ export default function Home() {
 
   return (
     <>
+      <ScrollProgress />
       {isLoading && (
         <Loader
           onComplete={() =>

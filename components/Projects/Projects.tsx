@@ -2,19 +2,26 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion, useReducedMotion } from 'motion/react';
 
 import { useLanguage } from '@/context/LanguageContext';
 import { projects } from '@/data/projects';
+import Reveal from '@/components/ui/Reveal';
 
 import styles from './Projects.module.css';
 
 export default function Projects() {
   const { t } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section
+    <motion.section
       id="projects"
       className={styles.projects}
+      initial={shouldReduceMotion ? false : { backgroundColor: '#f8eee6' }}
+      whileInView={{ backgroundColor: '#101014' }}
+      viewport={{ once: true, amount: 0.12 }}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
     >
       {/* Decorative elements */}
 
@@ -34,32 +41,36 @@ export default function Projects() {
 
         {/* Section label */}
 
-        <div className={styles.label}>
+        <Reveal className={styles.label}>
           <span>{t.projects.label}</span>
 
           <div className={styles.labelLine} />
 
           <span className={styles.labelDot} />
-        </div>
+        </Reveal>
 
 
         {/* Title */}
 
-        <h2 className={styles.title}>
+        <Reveal delay={0.08}><h2 className={styles.title}>
           {t.projects.title}
-        </h2>
+        </h2></Reveal>
 
 
         {/* Projects */}
 
         <div className={styles.grid}>
-          {projects.slice(0, 3).map((project) => {
+          {projects.slice(0, 3).map((project, index) => {
             const content = t.projects.items[project.id];
 
             return (
-              <article
+              <motion.article
                 key={project.id}
                 className={styles.card}
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.45, delay: index * 0.09 }}
               >
 
                 {/* Image */}
@@ -121,7 +132,7 @@ export default function Projects() {
 
                 </div>
 
-              </article>
+              </motion.article>
             );
           })}
         </div>
@@ -129,7 +140,7 @@ export default function Projects() {
 
         {/* View all */}
 
-        <Link
+        <Reveal delay={0.16}><Link
           href="/projects"
           className={styles.viewAll}
         >
@@ -138,9 +149,9 @@ export default function Projects() {
           </span>
 
           <span>↗</span>
-        </Link>
+        </Link></Reveal>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -3,6 +3,7 @@
 import { useLanguage } from '@/context/LanguageContext';
 
 import AboutStats from './AboutStats';
+import Reveal from '@/components/ui/Reveal';
 
 import styles from './About.module.css';
 
@@ -40,17 +41,18 @@ export default function About() {
 
         {/* Section label */}
 
-        <div className={styles.label}>
+        <Reveal className={styles.label}>
           <span>
             {t.about.label}
           </span>
 
           <div className={styles.labelLine} />
-        </div>
+        </Reveal>
 
 
         {/* Heading */}
 
+        <Reveal delay={0.08}>
         <h2 className={styles.title}>
           <span>
             {t.about.title.first}
@@ -60,11 +62,12 @@ export default function About() {
             {t.about.title.second}
           </span>
         </h2>
+        </Reveal>
 
 
         {/* Description */}
 
-        <div className={styles.description}>
+        <Reveal className={styles.description} delay={0.14}>
           {t.about.description.map(
             (paragraph, index) => (
               <p key={index}>
@@ -72,16 +75,17 @@ export default function About() {
               </p>
             )
           )}
-        </div>
+        </Reveal>
 
 
         {/* Stats */}
 
-        <AboutStats />
+        <Reveal delay={0.18}><AboutStats /></Reveal>
 
 
         {/* Quote */}
 
+        <Reveal delay={0.22}>
         <blockquote className={styles.quote}>
           <span className={styles.quoteMark}>
             “
@@ -95,6 +99,7 @@ export default function About() {
             ”
           </span>
         </blockquote>
+        </Reveal>
 
       </div>
     </section>
