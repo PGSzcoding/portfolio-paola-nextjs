@@ -240,6 +240,8 @@
   gap: 18px;
 
   min-height: 330px;
+  max-height: 430px;
+  overflow-y: auto;
 
   padding: 28px 24px;
 }
@@ -366,9 +368,17 @@
   font-size: 13px;
 }
 
-.inputWrapper span {
+.inputWrapper input {
   flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--white);
+  font: inherit;
 }
+
+.inputWrapper input::placeholder { color: #77747d; }
 
 .inputWrapper button {
   display: flex;
@@ -391,6 +401,10 @@
 
   cursor: pointer;
 }
+
+.inputWrapper button:disabled { cursor: not-allowed; opacity: 0.55; }
+
+.error { margin: -8px 24px 12px; color: #ffb4b4; font-size: 12px; }
 
 
 /* =========================

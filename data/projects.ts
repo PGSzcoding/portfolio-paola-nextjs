@@ -6,87 +6,71 @@ export type ProjectId =
   | 'tekoestudio'
   | 'chat-app';
 
-export type ProjectCategory = 'fullstack' | 'freelance';
+export type ProjectCategory = 'fullstack' | 'freelance' | 'Full-Stack Project';
 
 export interface Project {
   id: ProjectId;
   image: string;
+  description: string;
   category: ProjectCategory;
-  technologies: readonly string[];
+  technologies: string[];
+  title: string;
+  liveUrl?: string;
+  githubUrl?: string;
+
+  details: {
+    overview: string;
+    screenshots: {
+      image: string;
+      title: string;
+    }[];
+  };
 }
 
 export const projects = [
   {
     id: 'proofs-trials',
+    title: 'Proofs & Trials P&T S.A.S.',
+    category: 'Full-Stack Project',
+    description:
+      'A full-stack web application for managing, storing and verifying digital certificates securely.',
+
     image: '/images/default-proyect.png',
-    category: 'fullstack',
+
     technologies: [
       'React',
       'TypeScript',
+      'Tailwind CSS',
       'Node.js',
       'AWS',
-      'Tailwind CSS',
+      'DynamoDB',
     ],
+
+    liveUrl: 'https://proofsandtrials.netlify.app/',
+    githubUrl: '',
+
+    details: {
+      overview:
+        'I designed and developed a custom platform with a public certificate verification portal and an administrative dashboard for managing records, users and documents. The system integrates AWS services for secure file storage and database management.',
+
+      screenshots: [
+        {
+          image: '/images/default-proyect.png',
+          title: 'Certificate verification',
+        },
+        {
+          image: '/images/default-proyect.png',
+          title: 'Admin dashboard',
+        },
+        {
+          image: '/images/default-proyect.png',
+          title: 'Certificate management',
+        },
+      ],
+    },
   },
 
-  {
-    id: 'layout-aleman',
-    image: '/images/default-proyect.png',
-    category: 'freelance',
-    technologies: [
-      'SvelteKit',
-      'JavaScript',
-      'Firebase',
-      'CMS',
-    ],
-  },
 
-  {
-    id: 'hospitality-platform',
-    image: '/images/default-proyect.png',
-    category: 'fullstack',
-    technologies: [
-      'Svelte',
-      'TypeScript',
-      'Node.js',
-      'AWS',
-    ],
-  },
-
-  {
-    id: 'bookshelf',
-    image: '/images/default-proyect.png',
-    category: 'fullstack',
-    technologies: [
-      'Next.js',
-      'TypeScript',
-      'Supabase',
-      'Tailwind CSS',
-    ],
-  },
-
-  {
-    id: 'tekoestudio',
-    image: '/images/default-proyect.png',
-    category: 'freelance',
-    technologies: [
-      'Svelte',
-      'Sanity',
-      'Vite',
-    ],
-  },
-
-  {
-    id: 'chat-app',
-    image: '/images/default-proyect.png',
-    category: 'fullstack',
-    technologies: [
-      'React',
-      'Node.js',
-      'MongoDB',
-      'Socket.io',
-    ],
-  },
 ] as const satisfies readonly Project[];
 
 export const projectTechnologies = [

@@ -5,7 +5,6 @@ export default function Projects() {
   return (
     <>
       <Header />
-
       <ProjectsPage />
     </>
   );

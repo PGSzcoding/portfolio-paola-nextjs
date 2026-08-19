@@ -3,21 +3,20 @@ export const en = {
       home: 'Home',
       about: 'About me',
       projects: 'Projects',
-      stack: 'Tech Stack',
       contact: 'Contact',
-      letsTalk: "Let's talk",
+      letsTalk: "Get to Know Me",
       openMenu: 'Open menu',
       closeMenu: 'Close menu',
     },
 
     hero: {
       greeting: "HI, I'M",
-      role: 'Frontend Developer',
+      role: 'Full-Stack Software Engineer',
       description:
-        'I build fast, accessible web experiences with a focus on people.',
+        'I build software where engineering meets creativity.',
       projectsButton: 'View my projects',
       cvButton: 'Download CV',
-      techLabel: 'TECH I WORK WITH',
+      techLabel: 'MY TECH STACK',
     },
     about: {
   label: '02. ABOUT ME',
@@ -28,11 +27,11 @@ export const en = {
   },
 
   description: [
-    'I’m a Full-Stack Software Engineer with 5+ years of experience building web applications and digital experiences that combine functionality, performance, and design.',
+    'I’m a Full-Stack Software Engineer with 5+ years of experience creating digital products where engineering and creativity come together. I care about building experiences that not only work well, but also have intention and personality.',
 
-    'I specialize in frontend development, with experience in React, Next.js, TypeScript, Svelte, and Angular. I also work with Node.js, APIs, databases, and AWS to build complete and scalable solutions.',
+    'My experience started primarily in frontend development, but over time I’ve expanded into backend, APIs, databases, and cloud, allowing me to understand and build products from end to end.',
 
-    'I enjoy turning ideas into real products, collaborating with teams, and continuously learning along the way.',
+    'I enjoy turning ideas and complex problems into clear solutions, collaborating with others, and learning new tools that help me do better work.',
   ],
 
   stats: {
@@ -42,22 +41,22 @@ export const en = {
     },
 
     projects: {
-      value: '20+',
-      label: 'PROJECTS DELIVERED',
+      value: '7+',
+      label: 'WEB APPLICATIONS',
     },
 
     remote: {
-      value: 'REMOTE',
-      label: 'AVAILABLE WORLDWIDE',
+      value: 'FULL-STACK',
+      label: 'FRONTEND + BACKEND',
     },
 
     learning: {
-      value: 'LEARNING',
-      label: 'ALWAYS EVOLVING',
+      value: 'AI + CLOUD',
+      label: 'ALWAYS LEARNING',
     },
   },
 
-  quote: 'It’s not just about writing code, but about creating solutions that truly make a difference.',
+  quote: 'Good software doesn’t just work. It should have intention, too.',
 },
 projects: {
   label: '03. PROJECTS',
@@ -131,6 +130,8 @@ aiTwin: {
     'Ask me something about Paola...',
 
   send: 'Send question',
+  typing: 'Writing a response…',
+  error: 'I can’t answer right now. Please try again shortly.',
 },
 footer: {
   message:
@@ -169,4 +170,3 @@ projectsPage: {
   viewProject: 'View project',
 },
   }
-

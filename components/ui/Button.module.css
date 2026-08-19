@@ -44,3 +44,8 @@
   background: var(--black);
   color: var(--white);
 }
+
+.button:hover .aiIcon {
+  transform: scale(1.1);
+  color: white;
+}

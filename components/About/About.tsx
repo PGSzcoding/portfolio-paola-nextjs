@@ -1,7 +1,7 @@
 'use client';
 
 import { useLanguage } from '@/context/LanguageContext';
-
+import { motion, useReducedMotion} from 'motion/react';
 import AboutStats from './AboutStats';
 import Reveal from '@/components/ui/Reveal';
 
@@ -9,7 +9,7 @@ import styles from './About.module.css';
 
 export default function About() {
   const { t } = useLanguage();
-
+  const shouldReduceMotion = useReducedMotion();
   return (
     <section
       id="about"
@@ -33,9 +33,9 @@ export default function About() {
   &lt;/&gt;
 </div>
 
-<div className={styles.star}>
-  ✳
-</div>
+<motion.div className={styles.star} animate={shouldReduceMotion ? undefined : { rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}>
+                  ✳
+                  </motion.div>
 
       <div className={styles.content}>
 

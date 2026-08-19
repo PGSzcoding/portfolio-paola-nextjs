@@ -1,20 +1,36 @@
 .techStack {
   width: 100%;
+
   padding: 22px 28px;
   margin-top: 60px;
+
   background: rgba(255, 255, 255, 0.55);
 
   border: 1px solid rgba(23, 23, 23, 0.08);
+
   border-radius: var(--radius-lg);
 
   backdrop-filter: blur(10px);
+
+  overflow: hidden;
 }
+
+
+/* ================================
+   INNER
+================================ */
 
 .inner {
   display: flex;
   align-items: center;
+
   gap: 40px;
 }
+
+
+/* ================================
+   LABEL
+================================ */
 
 .label {
   flex-shrink: 0;
@@ -23,95 +39,181 @@
 
   font-size: 12px;
   font-weight: 700;
+
   letter-spacing: 1.5px;
+
+  white-space: nowrap;
 }
+
+
+/* ================================
+   MARQUEE
+================================ */
+
+.marquee {
+  position: relative;
+
+  flex: 1;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  /*
+    Small fade on both sides so technologies
+    smoothly disappear/appear.
+  */
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+}
+
+
+/* ================================
+   TRACK
+================================ */
+
+.track {
+  display: flex;
+
+  width: max-content;
+
+  animation: marquee 45s linear infinite;
+}
+
+
+/* ================================
+   TECHNOLOGIES
+================================ */
 
 .technologies {
   display: flex;
   align-items: center;
-  flex: 1;
+
+  flex-shrink: 0;
 }
+
+
+/* ================================
+   TECHNOLOGY
+================================ */
 
 .technology {
   display: flex;
   align-items: center;
+
   gap: 10px;
 
   padding: 0 28px;
 
+  color: var(--text);
+
   font-family: var(--font-display);
+
   font-size: 15px;
   font-weight: 600;
+
+  white-space: nowrap;
 }
+
+
+/* Divider */
 
 .technology + .technology {
   border-left: 1px solid rgba(23, 23, 23, 0.15);
 }
 
+
+/* ================================
+   ICON
+================================ */
+
 .icon {
   width: 26px;
   height: 26px;
+
+  flex-shrink: 0;
 }
 
-.technology:nth-child(1) .icon {
-  color: #61dafb;
+
+/* ================================
+   ANIMATION
+================================ */
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-.technology:nth-child(2) .icon {
-  color: #3178c6;
+
+/* ================================
+   HOVER
+================================ */
+
+.techStack:hover .track {
+  animation-play-state: paused;
 }
 
-.technology:nth-child(3) .icon {
-  color: #06b6d4;
+
+/* ================================
+   REDUCED MOTION
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
 }
 
-.technology:nth-child(4) .icon {
-  color: #68a063;
-}
 
-.technology:nth-child(5) .icon {
-  color: #ffca28;
-}
+/* ================================
+   TABLET
+================================ */
 
 @media (max-width: 900px) {
   .inner {
     flex-direction: column;
     align-items: flex-start;
+
     gap: 20px;
   }
 
-  .technologies {
+  .marquee {
     width: 100%;
-    flex-wrap: wrap;
-    gap: 16px 0;
   }
 
   .technology {
-    padding: 0 20px;
-  }
-
-  .technology:first-child {
-    padding-left: 0;
+    padding: 0 22px;
   }
 }
+
+
+/* ================================
+   MOBILE
+================================ */
 
 @media (max-width: 600px) {
   .techStack {
     padding: 20px;
-  }
 
-  .technologies {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+    margin-top: 40px;
   }
 
   .technology {
-    padding: 0;
-  }
+    gap: 8px;
 
-  .technology + .technology {
-    border-left: none;
+    padding: 0 18px;
+
+    font-size: 14px;
   }
 
   .icon {
@@ -119,7 +221,7 @@
     height: 22px;
   }
 
-  .technology {
-    font-size: 14px;
+  .track {
+    animation-duration: 38s;
   }
 }

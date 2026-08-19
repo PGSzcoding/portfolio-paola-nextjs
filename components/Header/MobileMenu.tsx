@@ -1,5 +1,5 @@
 interface NavItem {
-  label: 'home' | 'about' | 'projects' | 'stack' | 'contact';
+  label: 'home' | 'about' | 'projects' | 'contact';
   href: string;
 }
 
@@ -12,6 +12,7 @@ interface MobileMenuProps {
 import styles from './MobileMenu.module.css';
 import { useLanguage } from '@/context/LanguageContext';
 import Link from 'next/link';
+import { LuSparkles } from 'react-icons/lu';
 
 export default function MobileMenu({
   isOpen,
@@ -42,7 +43,7 @@ export default function MobileMenu({
         className={styles["mobile-menu-button"]}
         onClick={onClose}
       >
-        {t.nav.letsTalk} ↗
+        {t.nav.letsTalk} &nbsp; <LuSparkles size={18}  className={styles.aiIcon} />
       </Link>
 
     </div>

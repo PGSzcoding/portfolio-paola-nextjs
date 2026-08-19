@@ -31,11 +31,12 @@ export default function Hero() {
 
           <motion.div className={styles.content} style={shouldReduceMotion ? undefined : { y: contentY }}>
           <Reveal>
-
+            
             <div className={styles.intro}>
-              <span className={styles.star}>
-                ✳
-              </span>
+            
+                <motion.div className={styles.star} animate={shouldReduceMotion ? undefined : { rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}>
+                  ✳
+                  </motion.div>
 
               <span>
                 {t.hero.greeting}

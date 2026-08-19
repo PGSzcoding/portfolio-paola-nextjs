@@ -3,21 +3,20 @@ export const es = {
       home: 'Inicio',
       about: 'Sobre mí',
       projects: 'Proyectos',
-      stack: 'Tech Stack',
       contact: 'Contacto',
-      letsTalk: 'Hablemos',
+      letsTalk: 'Conóceme',
       openMenu: 'Abrir menú',
       closeMenu: 'Cerrar menú',
     },
 
     hero: {
       greeting: 'HOLA, SOY',
-      role: 'Frontend Developer',
+      role: 'Ingeniera de Software Full-Stack',
       description:
-        'Creo experiencias web rápidas, accesibles y enfocadas en las personas.',
+        'Creo software donde la ingeniería se encuentra con la creatividad.',
       projectsButton: 'Ver mis proyectos',
       cvButton: 'Descargar CV',
-      techLabel: 'TECNOLOGÍAS QUE UTILIZO',
+      techLabel: 'MI STACK TECNOLÓGICO',
     },
     about: {
       label: '02. SOBRE MÍ',
@@ -28,11 +27,9 @@ export const es = {
       },
 
       description: [
-        'Soy desarrolladora Full-Stack con más de 5 años de experiencia creando aplicaciones web y experiencias digitales que combinan funcionalidad, rendimiento y diseño.',
-
-        'Me especializo en frontend, con experiencia en React, Next.js, TypeScript, Svelte y Angular. También trabajo con Node.js, APIs, bases de datos y AWS para construir soluciones completas y escalables.',
-
-        'Me apasiona transformar ideas en productos reales, colaborar en equipo y seguir aprendiendo cada día.',
+        'Soy desarrolladora Full-Stack con más de 5 años de experiencia creando productos digitales donde la ingeniería y la creatividad trabajan juntas. Me interesa construir experiencias que no solo funcionen bien, sino que también tengan intención y personalidad.',
+        'Mi experiencia comenzó principalmente en frontend, pero con el tiempo he ampliado mi trabajo hacia backend, APIs, bases de datos y cloud, lo que me permite entender y construir productos de principio a fin.',
+        'Disfruto convertir ideas y problemas complejos en soluciones claras, trabajar con otras personas y aprender nuevas herramientas que me permitan hacer mejor mi trabajo.',
       ],
 
       stats: {
@@ -42,21 +39,21 @@ export const es = {
         },
 
         projects: {
-          value: '20+',
-          label: 'PROYECTOS ENTREGADOS',
+          value: '7+',
+          label: 'APLICACIONES WEB',
         },
         remote: {
-          value: 'REMOTA',
-          label: 'DISPONIBLE EN CUALQUIER LUGAR',
+          value: 'FULL-STACK',
+          label: 'FRONTEND + BACKEND',
         },
 
         learning: {
-          value: 'APRENDIENDO',
-          label: 'EN CONSTANTE EVOLUCIÓN',
+          value: 'AI + CLOUD',
+          label: 'SIEMPRE APRENDIENDO',
         },
       },
 
-      quote: 'No se trata solo de escribir código, sino de crear soluciones que realmente hacen la diferencia.',
+      quote: 'El buen software no solo funciona. También debe tener intención.',
     },
     projects: {
   label: '03. PROYECTOS',
@@ -130,6 +127,8 @@ aiTwin: {
     'Pregúntame algo sobre Paola...',
 
   send: 'Enviar pregunta',
+  typing: 'Escribiendo una respuesta…',
+  error: 'No puedo responder ahora. Inténtalo de nuevo en un momento.',
 },
 footer: {
   message:
@@ -169,4 +168,3 @@ projectsPage: {
 },
 
   }
-

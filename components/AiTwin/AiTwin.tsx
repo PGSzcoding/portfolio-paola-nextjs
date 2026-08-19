@@ -1,15 +1,51 @@
 'use client';
 
 import { useLanguage } from '@/context/LanguageContext';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'motion/react';
 import Reveal from '@/components/ui/Reveal';
 
 import styles from './AiTwin.module.css';
 
+type Message = { role: 'assistant' | 'user'; content: string };
+
 export default function AiTwin() {
   const { t } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
+  const [messages, setMessages] = useState<Message[]>([{ role: 'assistant', content: t.aiTwin.greeting }]);
+  const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const messagesRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = messagesRef.current;
+    if (container) {
+      container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' });
+    }
+  }, [messages, isLoading]);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const question = input.trim();
+    if (!question || isLoading) return;
+    const nextMessages = [...messages, { role: 'user' as const, content: question }];
+    setMessages(nextMessages);
+    setInput('');
+    setError('');
+    setIsLoading(true);
+    try {
+      const response = await fetch('/api/ai-twin', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: nextMessages }) });
+      const data = await response.json();
+      if (!response.ok || !data.message) throw new Error(data.error);
+      setMessages((current) => [...current, { role: 'assistant', content: data.message }]);
+    } catch {
+      setError(t.aiTwin.error);
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
   return (
     <motion.section
@@ -108,62 +144,33 @@ export default function AiTwin() {
 
             {/* Messages */}
 
-            <div className={styles.messages}>
-
-              <div
-                className={`${styles.message} ${styles.aiMessage}`}
-              >
-                <span className={styles.messageLabel}>
-                  {t.aiTwin.name}
-                </span>
-
-                <p>
-                  {t.aiTwin.greeting}
-                </p>
-              </div>
-
-
-              <div
-                className={`${styles.message} ${styles.userMessage}`}
-              >
-                <p>
-                  {t.aiTwin.exampleQuestion}
-                </p>
-              </div>
-
-
-              <div
-                className={`${styles.message} ${styles.aiMessage}`}
-              >
-                <span className={styles.messageLabel}>
-                  {t.aiTwin.name}
-                </span>
-
+            <div ref={messagesRef} className={styles.messages} aria-live="polite">
+              {messages.map((message, index) => (
+                <div key={`${message.role}-${index}`} className={`${styles.message} ${message.role === 'assistant' ? styles.aiMessage : styles.userMessage}`}>
+                  {message.role === 'assistant' && <span className={styles.messageLabel}>{t.aiTwin.name}</span>}
+                  <p>{message.content}</p>
+                </div>
+              ))}
+              {isLoading && <div className={`${styles.message} ${styles.aiMessage}`} aria-label={t.aiTwin.typing}>
                 <p className={styles.typing}>
                   <span />
                   <span />
                   <span />
                 </p>
-              </div>
-
+              </div>}
             </div>
-
-
-            {/* Input */}
-
-            <div className={styles.inputWrapper}>
-              <span>
-                {t.aiTwin.placeholder}
-              </span>
-
+            {error && <p className={styles.error} role="alert">{error}</p>}
+            <form className={styles.inputWrapper} onSubmit={handleSubmit}>
+              <label className="sr-only" htmlFor="ai-twin-question">{t.aiTwin.placeholder}</label>
+              <input id="ai-twin-question" value={input} onChange={(event) => setInput(event.target.value)} placeholder={t.aiTwin.placeholder} disabled={isLoading} maxLength={800} />
               <button
-                type="button"
+                type="submit"
                 aria-label={t.aiTwin.send}
-                disabled
+                disabled={isLoading || !input.trim()}
               >
                 ↗
               </button>
-            </div>
+            </form>
 
           </motion.div>
 

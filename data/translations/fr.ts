@@ -3,61 +3,60 @@ export const fr = {
       home: 'Accueil',
       about: 'À propos',
       projects: 'Projets',
-      stack: 'Technologies',
       contact: 'Contact',
-      letsTalk: 'Parlons',
+      letsTalk: 'Découvrez-moi',
       openMenu: 'Ouvrir le menu',
       closeMenu: 'Fermer le menu',
     },
 
     hero: {
       greeting: 'BONJOUR, JE SUIS',
-      role: 'Frontend Developer',
+      role: 'Ingénieure Logiciel Full-Stack',
       description:
-        'Je crée des expériences web rapides, accessibles et centrées sur les utilisateurs.',
+        'Je crée des logiciels à la rencontre de l’ingénierie et de la créativité.',
       projectsButton: 'Voir mes projets',
       cvButton: 'Télécharger mon CV',
-      techLabel: 'TECHNOLOGIES QUE J’UTILISE',
+      techLabel: 'MES TECHNOLOGIES',
     },
     about: {
-  label: '02. À PROPOS',
+  label: '02. À PROPOS DE MOI',
 
   title: {
     first: 'Je conçois avec intention.',
-    second: 'Je code avec sens.',
+    second: 'Je code avec un objectif.',
   },
 
   description: [
-    'Je suis ingénieure logiciel full-stack avec plus de 5 ans d’expérience dans la création d’applications web et d’expériences numériques qui allient fonctionnalité, performance et design.',
+   'Je suis ingénieure logiciel Full-Stack avec plus de 5 ans d’expérience dans la création de produits numériques où l’ingénierie et la créativité se rencontrent. J’aime concevoir des expériences qui ne se contentent pas de bien fonctionner, mais qui ont aussi une intention et une personnalité.',
 
-    'Je suis spécialisée en développement frontend, avec de l’expérience en React, Next.js, TypeScript, Svelte et Angular. Je travaille aussi avec Node.js, les API, les bases de données et AWS pour créer des solutions complètes et évolutives.',
+    'Mon expérience a commencé principalement dans le développement frontend, puis je me suis progressivement tournée vers le backend, les APIs, les bases de données et le cloud, ce qui me permet de comprendre et de construire des produits de bout en bout.',
 
-    'J’aime transformer les idées en produits concrets, collaborer en équipe et apprendre continuellement.',
+    'J’aime transformer des idées et des problèmes complexes en solutions claires, collaborer avec les autres et découvrir de nouveaux outils qui me permettent de progresser dans mon travail.',
   ],
 
   stats: {
     experience: {
       value: '5+',
-      label: 'ANNÉES D’EXPÉRIENCE',
+      label: 'ANS D’EXPÉRIENCE',
     },
 
     projects: {
-      value: '20+',
-      label: 'PROJETS LIVRÉS',
+      value: '7+',
+      label: 'APPLICATIONS WEB',
     },
 
     remote: {
-      value: 'REMOTE',
-      label: 'DISPONIBLE PARTOUT',
+      value: 'FULL-STACK',
+      label: 'FRONTEND + BACKEND',
     },
 
     learning: {
-      value: 'LEARNING',
-      label: 'TOUJOURS EN ÉVOLUTION',
+      value: 'IA + CLOUD',
+      label: 'TOUJOURS EN APPRENTISSAGE',
     },
   },
 
-  quote: 'Il ne s’agit pas seulement d’écrire du code, mais de créer des solutions qui font vraiment la différence.',
+  quote: 'Un bon logiciel ne se contente pas de fonctionner. Il doit aussi avoir une intention.',
 },
 projects: {
   label: '03. PROJETS',
@@ -125,6 +124,8 @@ aiTwin: {
     'Posez-moi une question sur Paola...',
 
   send: 'Envoyer la question',
+  typing: 'Rédaction de la réponse…',
+  error: 'Je ne peux pas répondre pour le moment. Réessayez dans un instant.',
 },
 footer: {
   message:
@@ -163,4 +164,3 @@ projectsPage: {
   viewProject: 'Voir le projet',
 },
   }
-

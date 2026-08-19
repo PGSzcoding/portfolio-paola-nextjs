@@ -1,0 +1,623 @@
+/* =========================================
+   PROJECT DETAIL
+   ========================================= */
+
+.projectPage {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.projectHero {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 40px 32px 80px;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 56px;
+
+  color: var(--primary);
+  font-size: 15px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition: gap 0.2s ease;
+}
+
+.backLink:hover {
+  gap: 12px;
+}
+
+
+/* =========================================
+   HERO CONTENT
+   ========================================= */
+
+.projectHeroContent {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 70px;
+}
+
+
+/* =========================================
+   PROJECT INFO
+   ========================================= */
+
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.projectCategory {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  color: var(--primary);
+
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.projectInfo h1 {
+  max-width: 650px;
+
+  margin: 0 0 24px;
+
+  color: var(--text);
+
+  font-family: var(--font-display);
+  font-size: clamp(48px, 5vw, 76px);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.projectInfo h1 span {
+  color: var(--primary);
+}
+
+.projectInfo > p {
+  max-width: 540px;
+
+  margin: 0 0 28px;
+
+  color: var(--text-secondary);
+
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   TECHNOLOGIES
+   ========================================= */
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-bottom: 32px;
+}
+
+.techTags span {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 38px;
+  padding: 7px 15px;
+
+  border: 1px solid rgba(36, 36, 36, 0.18);
+  border-radius: var(--radius-pill);
+
+  background: rgba(255, 255, 255, 0.35);
+
+  color: var(--text);
+
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.techTags span:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   PROJECT ACTIONS
+   ========================================= */
+
+.projectActions {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 48px;
+  padding: 0 22px;
+
+  border-radius: var(--radius-pill);
+
+  background: var(--primary);
+
+  color: var(--white);
+
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.primaryButton:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(115, 85, 216, 0.22);
+}
+
+.githubLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--text);
+
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.githubLink:hover {
+  color: var(--primary);
+}
+
+
+/* =========================================
+   HERO IMAGE
+   ========================================= */
+
+.projectHeroImage {
+  position: relative;
+
+  width: 100%;
+  min-height: 420px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(36, 36, 36, 0.08);
+  border-radius: var(--radius-lg);
+
+  background: var(--background-soft);
+
+  box-shadow:
+    0 20px 45px rgba(23, 23, 23, 0.08),
+    0 4px 12px rgba(23, 23, 23, 0.04);
+}
+
+.projectHeroImage::before {
+  content: '';
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  top: -100px;
+  right: -50px;
+
+  border-radius: 50%;
+
+  background: var(--primary-light);
+
+  opacity: 0.7;
+}
+
+.projectHeroImage img {
+  position: relative !important;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* =========================================
+   DIVIDER
+   ========================================= */
+
+.projectHero::after {
+  content: '';
+
+  display: block;
+
+  width: 100%;
+  height: 1px;
+
+  margin-top: 80px;
+
+  background: rgba(36, 36, 36, 0.12);
+}
+
+
+/* =========================================
+   OVERVIEW
+   ========================================= */
+
+.projectOverview {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
+
+  align-items: center;
+
+  gap: 70px;
+
+  width: 100%;
+  max-width: var(--container-width);
+
+  margin: 0 auto;
+
+  padding: 80px 32px 100px;
+}
+
+
+/* =========================================
+   OVERVIEW TEXT
+   ========================================= */
+
+.overviewText {
+  max-width: 520px;
+}
+
+.sectionLabel {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--primary);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.overviewText h2 {
+  margin: 0 0 22px;
+
+  color: var(--text);
+
+  font-family: var(--font-display);
+  font-size: clamp(34px, 3.5vw, 48px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.overviewText p {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   SCREENSHOTS
+   ========================================= */
+
+.screenshots {
+  width: 100%;
+}
+
+.screenshotsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+
+  padding: 10px;
+
+  border: 1px solid rgba(36, 36, 36, 0.08);
+  border-radius: var(--radius-md);
+
+  background: rgba(255, 255, 255, 0.45);
+
+  box-shadow: 0 12px 30px rgba(23, 23, 23, 0.05);
+}
+
+.screenshot {
+  position: relative;
+
+  overflow: hidden;
+
+  aspect-ratio: 16 / 10;
+
+  border-radius: var(--radius-sm);
+
+  background: var(--background-soft);
+}
+
+.screenshot img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+.screenshot:hover img {
+  transform: scale(1.03);
+}
+
+
+/* =========================================
+   SCREENSHOT DOTS
+   ========================================= */
+
+.screenshotDots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 18px;
+}
+
+.screenshotDots span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: rgba(23, 23, 23, 0.18);
+
+  transition:
+    width 0.2s ease,
+    background 0.2s ease;
+}
+
+.screenshotDots span.active {
+  width: 9px;
+  height: 9px;
+
+  background: var(--primary);
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1000px) {
+  .projectHero {
+    padding-top: 32px;
+    padding-bottom: 60px;
+  }
+
+  .projectHeroContent {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .projectInfo {
+    max-width: 700px;
+  }
+
+  .projectHeroImage {
+    min-height: 380px;
+  }
+
+  .projectOverview {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    padding-top: 65px;
+  }
+
+  .overviewText {
+    max-width: 700px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+  .projectHero {
+    padding: 24px 20px 50px;
+  }
+
+  .backLink {
+    margin-bottom: 38px;
+
+    font-size: 14px;
+  }
+
+  .projectHeroContent {
+    gap: 38px;
+  }
+
+  .projectCategory {
+    margin-bottom: 14px;
+
+    font-size: 12px;
+  }
+
+  .projectInfo h1 {
+    margin-bottom: 18px;
+
+    font-size: clamp(42px, 13vw, 58px);
+  }
+
+  .projectInfo > p {
+    margin-bottom: 22px;
+
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .techTags {
+    gap: 8px;
+
+    margin-bottom: 26px;
+  }
+
+  .techTags span {
+    min-height: 34px;
+
+    padding: 6px 12px;
+
+    font-size: 12px;
+  }
+
+  .projectActions {
+    flex-wrap: wrap;
+
+    gap: 18px;
+  }
+
+  .primaryButton {
+    min-height: 46px;
+
+    padding: 0 20px;
+
+    font-size: 14px;
+  }
+
+  .githubLink {
+    font-size: 14px;
+  }
+
+  .projectHeroImage {
+    min-height: 250px;
+
+    border-radius: var(--radius-md);
+  }
+
+  .projectHero::after {
+    margin-top: 50px;
+  }
+
+  .projectOverview {
+    display: flex;
+    flex-direction: column;
+
+    gap: 35px;
+
+    padding: 55px 20px 70px;
+  }
+
+  .overviewText {
+    width: 100%;
+  }
+
+  .sectionLabel {
+    font-size: 11px;
+  }
+
+  .overviewText h2 {
+    margin-bottom: 16px;
+
+    font-size: 34px;
+  }
+
+  .overviewText p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .screenshotsGrid {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+
+    padding: 8px;
+  }
+
+  .screenshot {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 420px) {
+  .projectHero {
+    padding-inline: 16px;
+  }
+
+  .projectInfo h1 {
+    font-size: 40px;
+  }
+
+  .projectInfo > p {
+    font-size: 15px;
+  }
+
+  .projectActions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .projectOverview {
+    padding-inline: 16px;
+  }
+}
