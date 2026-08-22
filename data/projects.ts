@@ -42,31 +42,31 @@ export const projects = [
       screenshots: [
         {
           image: '1.png',
-          title: 'Certificate verification',
+          title: 'Home',
         },
         {
           image: '2.png',
-          title: 'Admin dashboard',
+          title: 'Responsive',
         },
         {
           image: '3.png',
-          title: 'Certificate management2',
+          title: 'Services',
         },
         {
           image: '4.png',
-          title: 'Certificate management3',
+          title: 'Map',
         },
         {
           image: '5.png',
-          title: 'Certificate management4',
+          title: 'Certificate consult',
         },
         {
           image: '6.png',
-          title: 'Certificate management5',
+          title: 'Admin',
         },
         {
           image: '7.png',
-          title: 'Certificate management6',
+          title: 'Admin panel',
         },
       ],
     },
