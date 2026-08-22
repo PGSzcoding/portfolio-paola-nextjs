@@ -1,17 +1,10 @@
-export type ProjectId =
-  | 'proofs-trials'
-  | 'layout-aleman'
-  | 'hospitality-platform'
-  | 'bookshelf'
-  | 'tekoestudio'
-  | 'chat-app';
+
 
 export type ProjectCategory = 'fullstack' | 'freelance' | 'Full-Stack Project';
 
 export interface Project {
-  id: ProjectId;
+  id: string;
   image: string;
-  description: string;
   category: ProjectCategory;
   technologies: string[];
   title: string;
@@ -19,7 +12,6 @@ export interface Project {
   githubUrl?: string;
 
   details: {
-    overview: string;
     screenshots: {
       image: string;
       title: string;
@@ -32,10 +24,7 @@ export const projects = [
     id: 'proofs-trials',
     title: 'Proofs & Trials P&T S.A.S.',
     category: 'Full-Stack Project',
-    description:
-      'A full-stack web application for managing, storing and verifying digital certificates securely.',
-
-    image: '/images/default-proyect.png',
+    image: 'portada.png',
 
     technologies: [
       'React',
@@ -50,21 +39,34 @@ export const projects = [
     githubUrl: '',
 
     details: {
-      overview:
-        'I designed and developed a custom platform with a public certificate verification portal and an administrative dashboard for managing records, users and documents. The system integrates AWS services for secure file storage and database management.',
-
       screenshots: [
         {
-          image: '/images/default-proyect.png',
+          image: '1.png',
           title: 'Certificate verification',
         },
         {
-          image: '/images/default-proyect.png',
+          image: '2.png',
           title: 'Admin dashboard',
         },
         {
-          image: '/images/default-proyect.png',
-          title: 'Certificate management',
+          image: '3.png',
+          title: 'Certificate management2',
+        },
+        {
+          image: '4.png',
+          title: 'Certificate management3',
+        },
+        {
+          image: '5.png',
+          title: 'Certificate management4',
+        },
+        {
+          image: '6.png',
+          title: 'Certificate management5',
+        },
+        {
+          image: '7.png',
+          title: 'Certificate management6',
         },
       ],
     },

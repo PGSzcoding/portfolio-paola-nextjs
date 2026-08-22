@@ -73,41 +73,23 @@ projects: {
   items: {
   'proofs-trials': {
     title: 'Proofs & Trials',
-    description:
-      'Certification platform with a public verification portal and administrative dashboard.',
+     "description": "Full-stack web platform developed for a company specialized in industrial inspections and non-destructive testing, combining a modern corporate website, public certificate verification portal, and secure administrative dashboard for cloud-based document management.",
+  "overview": "I designed and developed an end-to-end web solution using React, TypeScript, Node.js, and AWS. The platform streamlines certificate and document management through secure cloud storage, fast certificate search, and an intuitive administrative interface, while delivering a responsive and accessible experience across devices.",
+  "keyfeatures": [
+    "Modern corporate website built with React, TypeScript, and Tailwind CSS",
+    "Public certificate verification portal with fast search functionality",
+    "Secure AWS S3 integration using pre-signed URLs for PDF uploads and downloads",
+    "DynamoDB integration for certificate metadata management and efficient searches",
+    "Secure administrative dashboard for managing certificates and documents",
+    "Fully responsive design optimized for desktop, tablet, and mobile devices",
+    "Interactive UI with reusable React components, animations, and carousels",
+    "Accessibility and SEO improvements for better usability and discoverability"
+  ]
   },
 
-  'layout-aleman': {
-    title: 'Layout Alemán',
-    description:
-      'Bilingual website with an integrated CMS for managing content and projects.',
-  },
-
-  'hospitality-platform': {
-    title: 'Hospitality Platform',
-    description:
-      'Booking and operations platform supporting more than 130 properties.',
-  },
-
-  'bookshelf': {
-    title: 'BookShelf',
-    description:
-      'Application for organizing, discovering, and managing your personal book library.',
-  },
-
-  'tekoestudio': {
-    title: 'Tekoestudio',
-    description:
-      'Website and digital experiences developed for a creative agency.',
-  },
-
-  'chat-app': {
-    title: 'Chat App',
-    description:
-      'Real-time messaging application for communication between users.',
-  },
 },
 },
+
 aiTwin: {
   label: 'PAOLA\'S AI TWIN',
   name: 'PAOLA\'S AI TWIN',
@@ -121,7 +103,7 @@ aiTwin: {
   online: 'ONLINE',
 
   greeting:
-    "Hi! I'm Paola's AI Twin. What would you like to know about her?",
+    "Hi! I'm Paola's AI Twin 👋 Curious about my work, projects, or experience? Ask me anything!",
 
   exampleQuestion:
     'What technologies does Paola use?',

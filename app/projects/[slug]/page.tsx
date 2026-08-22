@@ -1,11 +1,9 @@
 import { notFound } from 'next/navigation';
-
 import { projects } from '@/data/projects';
-import styles from '@/components/Projects/Project/Project.module.css'
-import ProjectHero from '@/components/Projects/Project/ProjectHero';
-import ProjectOverview from '@/components/Projects/Project/ProjectOverview';
+import styles from '@/components/ProjectsPage/Project/Project.module.css'
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
+import ClientProjectPage from '@/components/ProjectsPage/Project/ClientProjectPage';
 
 interface ProjectPageProps {
   params: Promise<{
@@ -18,6 +16,8 @@ export default async function ProjectPage({
 }: ProjectPageProps) {
   const { slug } = await params;
 
+ 
+
   const project = projects.find(
     (project) => project.id === slug
   );
@@ -28,15 +28,11 @@ export default async function ProjectPage({
 
   return (
     <>
-        <Header/>
+      <Header/>
         <main className={styles.projectPage}>
-      <ProjectHero project={project} />
-
-      <ProjectOverview project={project} />
-    </main>
+            <ClientProjectPage project={project} />
+        </main>
       <Footer/>
-
     </>
-    
   );
 }

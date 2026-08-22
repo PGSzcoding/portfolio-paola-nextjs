@@ -1,5 +1,5 @@
 .footer {
-  padding: 70px 24px 25px;
+  padding: 20px 24px 25px;
 
   background: #101014;
 
@@ -72,6 +72,59 @@
 
 .bottom a:hover {
   color: var(--primary);
+}
+
+/* =========================
+   SOCIAL LINKS
+========================= */
+
+.socials {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 55px;
+}
+
+.socialLink {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.16);
+
+  border-radius: 50%;
+
+  color: #aaa7ad;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.socialLink svg {
+  width: 17px;
+  height: 17px;
+}
+
+.socialLink:hover {
+  color: var(--primary);
+
+  border-color: var(--primary);
+
+  background: rgba(115, 85, 216, 0.08);
+
+  transform: translateY(-3px);
 }
 
 

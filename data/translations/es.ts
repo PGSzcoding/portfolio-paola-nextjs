@@ -70,41 +70,21 @@ export const es = {
   items: {
   'proofs-trials': {
     title: 'Proofs & Trials',
-    description:
-      'Plataforma de certificación con portal público de verificación y dashboard administrativo.',
-  },
-
-  'layout-aleman': {
-    title: 'Layout Alemán',
-    description:
-      'Sitio web bilingüe con CMS integrado para gestionar contenido y proyectos.',
-  },
-
-  'hospitality-platform': {
-    title: 'Hospitality Platform',
-    description:
-      'Plataforma de reservas y operaciones para más de 130 propiedades.',
-  },
-
-  'bookshelf': {
-    title: 'BookShelf',
-    description:
-      'Aplicación para organizar y descubrir libros y gestionar tu biblioteca personal.',
-  },
-
-  'tekoestudio': {
-    title: 'Tekoestudio',
-    description:
-      'Sitio web y experiencias digitales desarrolladas para una agencia creativa.',
-  },
-
-  'chat-app': {
-    title: 'Chat App',
-    description:
-      'Aplicación de mensajería en tiempo real con comunicación entre usuarios.',
-  },
+    "description": "Plataforma web full-stack desarrollada para una empresa especializada en inspecciones industriales y ensayos no destructivos, que integra un sitio corporativo moderno, un portal público para la consulta de certificados y un panel administrativo seguro para la gestión de documentos en la nube.",
+  "overview": "Diseñé y desarrollé una solución web integral utilizando React, TypeScript, Node.js y AWS. La plataforma optimiza la gestión de certificados y documentos mediante almacenamiento seguro en la nube, búsqueda rápida de certificados y una interfaz administrativa intuitiva, ofreciendo una experiencia responsive y accesible en diferentes dispositivos.",
+  "keyfeatures": [
+    "Sitio web corporativo moderno desarrollado con React, TypeScript y Tailwind CSS",
+    "Portal público de consulta de certificados con funcionalidad de búsqueda rápida",
+    "Integración segura con AWS S3 mediante URLs prefirmadas para la carga y descarga de archivos PDF",
+    "Integración con DynamoDB para la gestión de metadatos y búsquedas eficientes de certificados",
+    "Panel administrativo seguro para gestionar certificados y documentos",
+    "Diseño totalmente responsive optimizado para escritorio, tablet y dispositivos móviles",
+    "Interfaz interactiva con componentes React reutilizables, animaciones y carruseles",
+    "Mejoras de accesibilidad y SEO para una mejor experiencia de usuario y visibilidad"
+  ]
+}},
 },
-},
+
 aiTwin: {
   label: 'PAOLA\'S AI TWIN',
   name: 'PAOLA\'S AI TWIN',
@@ -118,7 +98,7 @@ aiTwin: {
   online: 'ONLINE',
 
   greeting:
-    '¡Hola! Soy el AI Twin de Paola. ¿Qué quieres saber sobre ella?',
+    '¡Hola! 👋 Soy el AI Twin de Paola. ¿Quieres saber cómo trabajo, qué he construido o qué estoy aprendiendo? ¡Pregúntame lo que quieras!',
 
   exampleQuestion:
     '¿Qué tecnologías utiliza Paola?',

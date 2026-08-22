@@ -4,7 +4,28 @@ import Link from 'next/link';
 
 import { useLanguage } from '@/context/LanguageContext';
 
+import { FiMail, FiLinkedin } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
+
 import styles from './Footer.module.css';
+
+const socialLinks = [
+  {
+    label: 'Email',
+    href: 'mailto:paolagtzsal@gmail.com',
+    icon: FiMail,
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/paola-guti%C3%A9rrez-49b84a1a1/',
+    icon: FiLinkedin,
+  },
+  {
+    label: 'WhatsApp',
+    href: 'https://wa.me/524491984582',
+    icon: FaWhatsapp,
+  },
+];
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -20,6 +41,32 @@ export default function Footer() {
         >
           PG<span>.</span>
         </Link>
+
+        {/* Social links */}
+        <div className={styles.socials}>
+          {socialLinks.map(
+            ({ label, href, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                className={styles.socialLink}
+                aria-label={label}
+                target={
+                  label === 'Email'
+                    ? undefined
+                    : '_blank'
+                }
+                rel={
+                  label === 'Email'
+                    ? undefined
+                    : 'noopener noreferrer'
+                }
+              >
+                <Icon />
+              </a>
+            )
+          )}
+        </div>
 
         <div className={styles.bottom}>
           <span>

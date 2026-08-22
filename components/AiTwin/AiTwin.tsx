@@ -56,6 +56,8 @@ export default function AiTwin() {
       viewport={{ once: true, amount: 0.12 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
     >
+           <div className={styles.circle} />   
+
       <div className={styles.content}>
 
         {/* Header */}
@@ -73,7 +75,6 @@ export default function AiTwin() {
             {t.aiTwin.description}
           </p>
         </Reveal>
-
 
         {/* Chat area */}
 

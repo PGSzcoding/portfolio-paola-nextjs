@@ -73,35 +73,22 @@ projects: {
   items: {
   'proofs-trials': {
     title: 'Proofs & Trials',
-    description: 'Plateforme de certification avec un portail public de vérification et un tableau de bord administratif.',
-  },
-
-  'layout-aleman': {
-    title: 'Layout Alemán',
-    description: 'Site web bilingue avec un CMS intégré pour gérer le contenu et les projets.',
-  },
-
-  'hospitality-platform': {
-    title: 'Hospitality Platform',
-    description: 'Plateforme de réservation et d’opérations pour plus de 130 établissements.',
-  },
-
-  'bookshelf': {
-    title: 'BookShelf',
-    description: 'Application pour organiser, découvrir et gérer votre bibliothèque personnelle.',
-  },
-
-  'tekoestudio': {
-    title: 'Tekoestudio',
-    description: 'Site web et expériences numériques développés pour une agence créative.',
-  },
-
-  'chat-app': {
-    title: 'Chat App',
-    description: 'Application de messagerie en temps réel pour communiquer entre utilisateurs.',
+    "description": "Plateforme web full-stack développée pour une entreprise spécialisée dans les inspections industrielles et les essais non destructifs, combinant un site web corporatif moderne, un portail public de vérification des certificats et un tableau de bord administratif sécurisé pour la gestion des documents dans le cloud.",
+  "overview": "J’ai conçu et développé une solution web complète avec React, TypeScript, Node.js et AWS. La plateforme optimise la gestion des certificats et des documents grâce à un stockage cloud sécurisé, une recherche rapide des certificats et une interface d’administration intuitive, tout en offrant une expérience responsive et accessible sur tous les appareils.",
+  "keyfeatures": [
+    "Site web corporatif moderne développé avec React, TypeScript et Tailwind CSS",
+    "Portail public de vérification des certificats avec fonctionnalité de recherche rapide",
+    "Intégration sécurisée d’AWS S3 avec des URL pré-signées pour l’importation et le téléchargement de fichiers PDF",
+    "Intégration de DynamoDB pour la gestion des métadonnées des certificats et des recherches efficaces",
+    "Tableau de bord administratif sécurisé pour gérer les certificats et les documents",
+    "Design entièrement responsive optimisé pour ordinateur, tablette et mobile",
+    "Interface interactive avec des composants React réutilisables, des animations et des carrousels",
+    "Améliorations de l’accessibilité et du SEO pour une meilleure expérience utilisateur et visibilité"
+  ]
   },
 },
 },
+
 aiTwin: {
   label: 'PAOLA\'S AI TWIN',
   name: 'PAOLA\'S AI TWIN',
@@ -115,7 +102,7 @@ aiTwin: {
   online: 'ONLINE',
 
   greeting:
-    'Bonjour ! Je suis l’AI Twin de Paola. Que souhaitez-vous savoir sur elle ?',
+    'Salut ! 👋 Je suis l’AI Twin de Paola. Tu veux savoir comment je travaille, ce que j’ai créé ou ce que j’apprends en ce moment ? Pose-moi tes questions !',
 
   exampleQuestion:
     'Quelles technologies Paola utilise-t-elle ?',

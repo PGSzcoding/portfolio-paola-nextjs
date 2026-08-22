@@ -20,8 +20,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const { t } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
-
-  const content = t.projects.items[project.id];
+  const content = t.projects.items[project.id as keyof typeof t.projects.items];;
 
   return (
     <motion.article
@@ -45,9 +44,7 @@ export default function ProjectCard({
 
         <span className={styles.category}>
           {
-            t.projectsPage.categories[
-              project.category
-            ]
+            project.category
           }
         </span>
 
@@ -74,7 +71,7 @@ export default function ProjectCard({
 
 
         <Link
-          href={`/projects#${project.id}`}
+          href={`/projects/${project.id}`}
           className={styles.arrow}
           aria-label={`${t.projectsPage.viewProject}: ${content.title}`}
         >

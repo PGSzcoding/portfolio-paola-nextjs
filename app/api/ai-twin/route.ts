@@ -1,3 +1,4 @@
+import { profileIA } from '@/data/aiTwinProfile';
 import { NextResponse } from 'next/server';
 
 const MODEL = 'openai/gpt-oss-20b:free';
@@ -6,7 +7,8 @@ const MAX_MESSAGE_LENGTH = 800;
 
 type ChatMessage = { role: 'user' | 'assistant'; content: string };
 
-const profile = `You are Paola Gutierrez's AI Twin for her developer portfolio. Answer only questions about Paola's professional profile, career, skills, projects, work style, and portfolio. Paola is a Full-Stack Software Engineer with 5+ years of experience. Her frontend focus includes React, Next.js, TypeScript, Svelte, Angular, accessibility, performance, and design. She also works with Node.js, APIs, databases, AWS, Firebase, Supabase, MongoDB, and Sanity. Her portfolio includes Proofs & Trials, Layout Alemán, a Hospitality Platform, BookShelf, Tekoestudio, and a real-time Chat App. Do not invent employers, education, exact dates, client details, availability, contact details, or project metrics beyond this context. If information is unavailable, say so clearly and suggest contacting Paola. Keep answers concise, warm, and professional. Reply in the same language as the visitor.`;
+
+const profile = profileIA
 
 function isChatMessage(value: unknown): value is ChatMessage {
   if (!value || typeof value !== 'object') return false;

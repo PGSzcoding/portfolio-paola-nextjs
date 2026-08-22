@@ -1,19 +1,15 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-
 import { projects } from '@/data/projects';
-
 import { useLanguage } from '@/context/LanguageContext';
-
 import ProjectFilters from './ProjectFilters';
 import ProjectGrid from './ProjectGrid';
-
 import styles from './ProjectsPage.module.css';
+import Image from 'next/image';
 
 export default function ProjectsPage() {
   const { t } = useLanguage();
-
   const [selectedTechnology, setSelectedTechnology] =
     useState('all');
 
@@ -31,6 +27,18 @@ export default function ProjectsPage() {
 
   return (
     <main className={styles.page}>
+
+<Image
+  src="/images/developer-working2.png"
+  alt="Developer working on a laptop"
+  width={500}
+  className={styles.avatar}
+  height={400}
+/>
+<div className={styles.dots}></div>
+            <div className={styles.code}>
+              &lt;/&gt;
+            </div>
 
       <section className={styles.hero}>
 
@@ -53,7 +61,7 @@ export default function ProjectsPage() {
 
 
       <section className={styles.projectsSection}>
-
+ 
         <ProjectGrid
           projects={filteredProjects}
         />
@@ -67,5 +75,6 @@ export default function ProjectsPage() {
       </section>
 
     </main>
+    
   );
 }

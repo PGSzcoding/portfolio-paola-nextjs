@@ -7,7 +7,6 @@ import { motion, useReducedMotion } from 'motion/react';
 import { useLanguage } from '@/context/LanguageContext';
 import { projects } from '@/data/projects';
 import Reveal from '@/components/ui/Reveal';
-
 import styles from './Projects.module.css';
 
 export default function Projects() {
@@ -25,8 +24,7 @@ export default function Projects() {
     >
       {/* Decorative elements */}
 
-      <div className={styles.dots} />
-
+      <motion.div className={styles.dots} animate={shouldReduceMotion ? undefined : { rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: 'linear' }} />
       <div className={styles.code}>
         &lt;/&gt;
       </div>
@@ -62,7 +60,7 @@ export default function Projects() {
         <div className={styles.grid}>
           {projects.slice(0, 3).map((project, index) => {
             const content = t.projects.items[project.id];
-
+            
             return (
               <motion.article
                 key={project.id}
@@ -72,12 +70,16 @@ export default function Projects() {
                 viewport={{ once: true, amount: 0.25 }}
                 transition={{ duration: 0.45, delay: index * 0.09 }}
               >
+                <Link
+                    href={`/projects/${project.id}`}
+                    aria-label={`${t.projectsPage.viewProject}: ${content.title}`}
+                  >
 
                 {/* Image */}
 
                 <div className={styles.imageWrapper}>
                   <Image
-                    src={project.image}
+                    src={`/images/projects/${project.id}/${project.image}`}
                     alt={content.title}
                     fill
                     sizes="(max-width: 650px) 100vw, (max-width: 900px) 50vw, 33vw"
@@ -86,9 +88,7 @@ export default function Projects() {
 
                   <span className={styles.category}>
                     {
-                      t.projects.categories[
-                        project.category
-                      ]
+                      project.category
                     }
                   </span>
                 </div>
@@ -120,17 +120,11 @@ export default function Projects() {
                   </div>
 
 
-                  {/* Arrow */}
 
-                  <Link
-                    href={`/projects#${project.id}`}
-                    className={styles.arrow}
-                    aria-label={`${t.projectsPage.viewProject}: ${content.title}`}
-                  >
-                    ↗
-                  </Link>
+                  
 
                 </div>
+                  </Link>
 
               </motion.article>
             );
